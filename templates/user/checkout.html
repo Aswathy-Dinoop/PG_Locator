@@ -1,0 +1,93 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<div class="page-title-wrap primary-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- page title content -->
+                <div class="page-title-content text-center">
+                    <ul class="mb-0 list-unstyle nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Billing</a></li>
+                    </ul>
+                    <h1 class="h2">Billing Details</h1>
+                </div><!--/. End of page title content -->
+            </div><!--/.col-->
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!-- /.End of page title -->
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-12">
+           
+          </div>
+        </div>
+        <div class="row">
+          
+                <div class="card-body">
+                  
+                </div>
+              
+              </div>
+    
+    <br>
+    <br>
+    <br>
+              
+            <div class="row mb-5">
+              <div class="col-md-12">
+                <h2 class="h3 mb-3 text-black">Your Payment</h2>
+                <div class="p-3 p-lg-5 border">
+                  <table class="table site-block-order-table mb-5">
+                    <thead>
+                      <th>Appartment Name</th>
+                      <th>Total</th>
+                    </thead>
+                    <tbody>
+                      {% for i in booked_items %}
+                      <tr>
+                        <td>{{i.pg_info.appartment_name}} </td>
+                        <td>₹ {{i.price}}</td>
+                      </tr>
+                      {% endfor %}
+                      
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
+                        <td class="text-black">₹ {{totalvalue}}</td>
+                      </tr>
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
+                        <td class="text-black font-weight-bold"><strong>₹ {{totalvalue}}</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+    
+    
+                  <div class="form-group">
+                    <button class="btn btn-primary btn-lg btn-block" onclick="window.location='payment'">Pay
+                      Now</button>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+       
+      </div>
+    </div>
+    
+
+    
+
+   {% endblock %}

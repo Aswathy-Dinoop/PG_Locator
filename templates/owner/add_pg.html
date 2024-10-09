@@ -1,0 +1,108 @@
+
+{% extends 'owner/base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+    <!-- <div class="ftco-section ftco-book ftco-no-pt ftco-no-pb"> -->
+    	<div class="container">
+	    	<div class="row justify-content-end">
+	    		<div class="col-lg-12">
+						<form action="" method="post" class="appointment-form" enctype="multipart/form-data">
+                            {% csrf_token %}
+							<h3 class="mb-3">Add your PG Apartment</h3>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+			    					<input type="text" class="form-control" id="name" name="name" placeholder="Appartment Name">
+			    				</div>
+								</div>
+                                <div class="col-md-12">
+									<div class="form-group">
+			    					<input type="text" class="form-control" id="location" name="location" placeholder="Appartment Location">
+			    				</div>
+								</div>
+                                <div class="col-md-12">
+									<div class="form-group">
+			    					<input type="text" class="form-control" id="facilities" name="facilities" placeholder="Appartment Facilities">
+			    				</div>
+								</div>
+                                <div class="col-md-6">
+									<div class="form-group">
+			    					<input type="text" class="form-control" id="price" name="price" placeholder="Appartment Price">
+			    				</div>
+								</div>
+                                <div class="col-md-6">
+									<div class="form-group">
+			    					<input type="file" class="form-control" id="image" name="image">
+			    				</div>
+                                </div>
+
+            
+								
+								
+                                <div class="col-md-6">
+									<div class="form-group">
+			    					<input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number">
+			    				</div>
+                                </div>
+                               
+                                <div class="col-md-6">
+									<div class="form-group">
+			    					<div class="form-field">
+	          					<div class="select-wrap">
+	                      <!-- <div class="icon"><span class="fa fa-chevron-down"></span></div> -->
+	                      <select name="food" id="food" class="form-control">
+	                      	<option value="" >Choose Food Menu</option>
+	                        <option value="Veg">Veg</option>
+	                        <option value="Non Veg">Non Veg</option>
+                            <option value="Both">Both</option>
+	                        
+	                      </select>
+	                    </div>
+			              </div>
+			    				</div>
+								</div>
+                                <!-- <div class="col-md-6">
+									<div class="form-group">
+			    					<input type="text" class="form-control" id="transport" name="transport" placeholder="Transportation Availability">
+			    				</div>
+                                </div> -->
+                                <div class="col-md-6">
+									<div class="form-group">
+			    					<div class="form-field">
+	          					<div class="select-wrap">
+	                      <!-- <div class="icon"><span class="fa fa-chevron-down"></span></div> -->
+	                      <select name="transport" id="transport" class="form-control">
+	                      	<option value="" >Transportation Availability</option>
+	                        <option value="Yes">Yes</option>
+	                        <option value="No">No</option>
+	                        
+	                      </select>
+	                    </div>
+			              </div>
+			    				</div>
+								</div>
+
+				
+								
+								<div class="col-md-12">
+									<div class="form-group">
+			              <input type="submit" value="Add Appartment Now" class="btn btn-primary py-3 px-4">
+			            </div>
+								</div>
+							</div>
+	    			</form>
+	    		</div>
+	    	</div>
+	    </div>
+        
+    </section>
+   
+{% endblock %}

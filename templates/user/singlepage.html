@@ -1,0 +1,51 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<section class="ftco-section bg-light">
+    <div class="container-fluid px-md-0">
+        <div class="row no-gutters justify-content-center pb-5 mb-3">
+  <div class="col-md-7 heading-section text-center ftco-animate">
+    <h2>Apartment Room</h2>
+  </div>
+</div>
+        <div class="row no-gutters">
+        <div class="col-lg-8">
+            <div class="room-wrap d-md-flex">
+                <a href="#" class="img" style="background-image: url({{pginfo.image.url}});"></a>
+                <div class="half left-arrow d-flex align-items-center">
+                    <div class="text p-4 p-xl-5 text-center">
+                        <p class="star mb-0"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></p>
+                        <!-- <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p> -->
+                        <h3 class="mb-3"><a href="">{{pginfo.appartment_name}}</a></h3>
+                        <ul class="list-accomodation">
+                            <li><span>Contact Number:</span>{{pginfo.phone}}</li>
+                            <li><span>Location:</span>{{pginfo.location}}</li>
+                            <li><span>Facilities:</span> {{pginfo.facilities}}</li>
+                            <li><span>Price:</span> {{pginfo.price}}</li>
+                            <li><span>Food Menu:</span> {{pginfo.food}}</li>
+                            <li><span>Transportation Availability:</span> {{pginfo.transport}}</li>
+                        </ul>
+                        <!-- <p class="pt-1"><a href="booking" class="btn-custom px-3 py-2">Book Now<span class="icon-long-arrow-right"></span></a></p> -->
+                      
+                        <div class="order-btn">
+                            <!-- <input type="number" id="quantity" name="quantity" min="1" max="20" required> -->
+                            <input type="hidden" class="form-control text-center" name="id" value="{{pginfo.id}}" >
+                            <!-- <p class="pt-1"><a href="booking" class="btn-custom px-3 py-2">Book Now<span class="icon-long-arrow-right"></span></a></p> -->
+
+                            <a href="payment?id={{pginfo.id}}"><input class="btn-custom px-3 py-2" type="submit" value="Book "> </a>                                              
+                        </div><!-- /.End of order btn -->
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </section>
+  {% endblock %}      
